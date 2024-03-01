@@ -6,8 +6,8 @@ import ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
 
 import { addNewContact } from '../redux/contactsSlice';
-import { getContactsList, getFilterContacts } from '../redux/selector';
 import { filterContacts } from '../redux/filterSlice';
+import { getContactsList, getFilterContacts } from '../redux/selector';
 
 export default function App() {
   const dispatch = useDispatch();

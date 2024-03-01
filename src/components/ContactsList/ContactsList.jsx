@@ -1,5 +1,7 @@
 import React from 'react';
+
 import ContactItem from 'components/ContactItem/ContactItem';
+
 import css from './ContactsList.module.css';
 
 export default function ContactsList({ contacts }) {
