@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 
+import { getContactsList } from '../../redux/selector';
 import css from './ContactForm.module.css';
 
-export default function ContactForm({ onFormSubmit, contacts }) {
+export default function ContactForm({ onFormSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+  const contactsList = useSelector(getContactsList);
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (contacts.every(contact => contact.name !== name)) {
+    if (contactsList.every(contact => contact.name !== name)) {
       const newContact = { name, number, id: nanoid(4) };
       onFormSubmit(newContact);
       setName('');
